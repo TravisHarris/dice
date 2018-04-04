@@ -1,0 +1,299 @@
+* {
+	box-sizing: border-box;
+}
+
+/*
+
+	HTML Element Tags
+
+*/
+
+body {
+	font-family: Heveltica, Arial, sans-serif;
+	background-color: #edeff0;
+	color: #333;
+}
+
+main {
+	width: 80%;
+	margin: 0 auto;
+	line-height: 1.5rem;
+}
+
+section {
+	margin: 2rem 0;
+}
+
+:target {
+  display: block;
+  position: relative;
+  top: -5px; 
+  visibility: hidden;
+}
+
+/*
+
+	Class Tags
+
+*/
+
+.main-header {
+	margin: 0;
+	padding: 0;
+	background: transparent;
+}
+
+.logo {
+	margin: 0;
+	padding: 0 0.2rem;
+	width: 4.5rem;
+	height: 5rem;
+	position: fixed;
+	top: 0;
+	left: 2.5rem;
+	z-index: 1000;
+	background-color: #333;
+	box-shadow: 1px 1px 1px 0.5px rgba(0,0,0,0.5);
+}
+
+.logo a:link {
+	margin: 0;
+	padding: 0;
+	display: block;
+	text-decoration: none;
+	color: #fff;
+}
+
+.main-nav {
+	position: absolute;
+	top: 0;
+	text-align: right;
+	width: 100%;
+	background-color: rgba(99,99,99,0.85);
+	border-bottom: 0.45rem solid #333;
+}
+
+.main-nav ul {
+	margin: 0;
+	padding: 0.5rem;
+	list-style: none;
+	width: 100%;
+}
+
+.main-nav a:link {
+	padding: 1rem;
+	display: block;
+	color: #fff;
+	background-color: transparent;
+	font-size: 2.5rem;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.logo a:visited,
+.logo a:hover,
+.main-nav a:visited {
+	color: #fff;
+}
+
+.main-nav a:hover {
+	color: #333;
+}
+
+.banner {
+	height: 100vh;
+	width: 100%;
+	position: absolute;	
+	top: 0;
+	left: 0;
+	background-image: url(../img/mountains.jpg);
+	filter: grayscale(40%);
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: -1;
+}
+
+.profile-picture {	
+	display: block;
+	margin: 0 auto;
+	width: 10rem;
+	border-radius: 50%;
+}
+
+.points-list {
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 0.8rem;
+}
+
+.points {
+	flex: 1;
+}
+
+.html,
+.css,
+.javascript {
+	margin-right: 0.5rem;
+}
+
+.html::before,
+.css::before,
+.javascript::before,
+.development-tools::before {
+	content: "";
+	width: 1rem;
+	height: 1rem;
+	display: inline-block;
+	border-radius: 50%;
+	margin-right: 0.5rem;
+}
+
+.html::before {
+	background-color: #39ADD1;
+}
+
+.css::before {
+	background-color: #3079AB;
+}
+
+.javascript::before {
+	background-color: #c25975;
+}
+
+.development-tools::before {
+	background-color: #637a91;
+}
+
+.credentials {
+	text-align: center;
+}
+
+.credentials h2 {
+	padding-top: 1rem;
+}
+
+.certificate img {
+	display: block;
+	width: 100%;
+	margin: 2rem auto;
+}
+
+.treehouse-badge-list {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.treehouse-badge {
+	padding: 1rem;
+	flex: 1 33%;
+	text-align: center;
+}
+
+.treehouse-badge img {
+	max-width: 90%;
+}
+
+
+
+/*
+
+	ID Tags
+
+*/
+
+#about {
+	margin-top: calc(2rem + 100vh);   /*elements above this one are fixed to the top of the screen
+										technically this is the first element on the page so this positioned 
+										1 page height from the top + 2rem to seperate it from the banner image*/
+}
+
+#education img {
+	width: 300px;
+}
+
+#treehouse-profile {
+	border-top: 1px solid #333;
+}
+
+
+/*
+
+	Media Queries
+
+*/
+
+@media only screen and (min-width: 600px) {
+	.main-nav li{
+		display: inline-block;
+		text-align: left;
+	}
+
+	.main-nav a:link {
+		font-size: 1.5rem;
+		padding-bottom: 0; 
+		padding-top: 0;
+	}
+
+	.profile {
+		display: flex;
+	}
+
+	.picture {
+		flex: 1;
+		padding: 1rem;
+	}
+
+	.bio {
+		flex: 2;
+	}
+
+	.profile-picture {
+		width: 12rem;
+	}
+
+	.credentials {
+		display: flex;
+		justify-content: center;
+	}
+
+	.certificate,
+	#treehouse-profile {
+		flex: 1 50%;
+	}
+
+	#treehouse-profile {
+		padding-left: 1rem;
+		border: none;
+	}
+
+	.treehouse-badge {
+		flex: 1 50%;
+	}
+}
+
+@media only screen and (min-width: 900px) {
+	.main-nav ul {
+		max-width: 90%;
+	}
+
+	.treehouse-badge {
+		flex: 1;
+	}
+
+}
+
+/*
+
+	ClearFix
+
+*/
+
+.clear::after {
+	content: "";
+	display: table;
+	clear: both;
+}
