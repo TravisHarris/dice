@@ -15,11 +15,9 @@ $("#dice-list li h3").on("click", 'input[type="button"]', function() {
 });
 
 
-/*
-
-	Dice Rolling
-
-*/
+	/*----------------------------------------
+		Dice Rolling
+	----------------------------------------*/
 
 
 // generate random number based on type of die.
@@ -33,17 +31,17 @@ function randomNumber(die) {
 
 // types of dice
 
-var d4 = [1, 4];
-var d6 = [1, 6];
-var d8 = [1, 8];
-var d10 = [0, 9];
-var d12 = [1, 12];
-var d20 = [1, 20];
+const d4 = [1, 4];
+const d6 = [1, 6];
+const d8 = [1, 8];
+const d10 = [0, 9];
+const d12 = [1, 12];
+const d20 = [1, 20];
 
 
 // roll dice when 'roll' button clicked
 
-$("#dice-form").on("submit", function(event){
+$("#dice-form").on("submit", (event) => {
 	event.preventDefault();
 
 	// get number of each type of dice 
@@ -75,78 +73,69 @@ $("#dice-form").on("submit", function(event){
 			if(types[i] !== 0){
 				if(i === 0){	//	D4
 					for(let j = 0; j < types[i]; j++) {
-						value += "<li>";
-						value += '<img class="d4" src="img/dice-4.png" alt="D4">';
-						value += '<h2 class="number-d4">';
-						value += randomNumber(d4);
-						value += '</h2>';
-						value += "</li>";
+						value += `
+							<li>
+								<img class="d4" src="../media/dice/dice-4.png" alt="D4">
+								<h2 class="number-d4">${randomNumber(d4)}</h2>
+							</li>`;
 					}
 				}
 				if(i === 1){	//	D6
 					for(let j = 0; j < types[i]; j++) {
-						value += "<li>";
-						value += '<img class="d6" src="img/dice-6.png" alt="D6">';
-						value += '<h2 class="number-d6">';
-						value += randomNumber(d6);
-						value += '</h2>';
-						value += "</li>";
+						value += `
+							<li>
+								<img class="d6" src="../media/dice/dice-6.png" alt="D6">
+								<h2 class="number-d6">${randomNumber(d6)}</h2>
+							</li>`;
 					}
 				}
 				if(i === 2){	//	D8
 					for(let j = 0; j < types[i]; j++) {
-						value += "<li>";
-						value += '<img class="d8" src="img/dice-8.png" alt="D8">';
-						value += '<h2 class="number-d8">';
-						value += randomNumber(d8);
-						value += '</h2>';
-						value += "</li>";
+						value += `
+							<li>
+								<img class="d8" src="../media/dice/dice-8.png" alt="D8">
+								<h2 class="number-d8">${randomNumber(d8)}</h2>
+							</li>`;
 					}
 				}
 				if(i === 3){	//	D10
 					for(let j = 0; j < types[i]; j++) {
-						value += "<li>";
-						value += '<img class="d10" src="img/dice-10.png" alt="D10">';
-						value += '<h2 class="number-d10">';
-						value += randomNumber(d10);
-						value += '</h2>';
-						value += "</li>";
+						value += `
+							<li>
+								<img class="d10" src="../media/dice/dice-10.png" alt="D10">
+								<h2 class="number-d10">${randomNumber(d10)}</h2>
+							</li>`;
 					}
 				}
 				if(i === 4){	//	D12
 					for(let j = 0; j < types[i]; j++) {
-						value += "<li>";
-						value += '<img class="d12" src="img/dice-12.png" alt="D12">';
-						value += '<h2 class="number-d12">';
-						value += randomNumber(d12);
-						value += '</h2>';
-						value += "</li>";
+						value += `
+							<li>
+								<img class="d12" src="../media/dice/dice-12.png" alt="D12">
+								<h2 class="number-d12">${randomNumber(d12)}</h2>
+							</li>`;
 					}
 				}
 				if(i === 5){	//	D20
 					for(let j = 0; j < types[i]; j++) {
-						value += "<li>";
-						value += '<img class="d20" src="img/dice-20.png" alt="D20">';
-						value += '<h2 class="number-d20">';
-						value += randomNumber(d20);
-						value += '</h2>';
-						value += "</li>";
+						value += `
+							<li>
+								<img class="d20" src="../media/dice/dice-20.png" alt="D20">
+								<h2 class="number-d20">${randomNumber(d20)}</h2>
+								</li>`;
 					}
 				}
 				if(i === 6){	//	D100 (2 D10's)
 					for(let j = 0; j < types[i]; j++) {
-						value += "<li>";
-						value += '<div class="d100-collection">';
-						value += '<img class="d100" src="img/dice-10.png" alt="D10">';
-						value += '<h2 class="number-d100-1">';
-						value += randomNumber(d10);
-						value += '</h2>';
-						value += '<img class="d100" src="img/dice-10.png" alt="D10">';
-						value += '<h2 class="number-d100-2">';
-						value += randomNumber(d10);
-						value += '</h2>';
-						value += "</div>";
-						value += "</li>";
+						value += `
+							<li>
+								<div class="d100-collection">
+									<img class="d100" src="../media/dice/dice-10.png" alt="D10">
+									<h2 class="number-d100-1">${randomNumber(d10)}</h2>
+									<img class="d100" src="../media/dice/dice-10.png" alt="D10">
+									<h2 class="number-d100-2">${randomNumber(d10)}</h2>
+								</div>
+							</li>`;
 					}
 				}
 			}
