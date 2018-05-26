@@ -1,7 +1,7 @@
 
 // plus and minus buttons
 
-$("#dice-list li h3").on("click", 'input[type="button"]', function() {
+$("#dice-list li .info").on("click", 'input[type="button"]', function(event) {
 	let num = $(this).siblings(".num-of-dice").val();
 	if($(this).val() === "+"){		
 		num++;
@@ -41,17 +41,17 @@ const d20 = [1, 20];
 
 // roll dice when 'roll' button clicked
 
-$("#dice-form").on("submit", (event) => {
+$("#dice-form").on("submit", function(event) {
 	event.preventDefault();
 
 	// get number of each type of dice 
-	let numd4s = $('input[name="d4"]').val();
-	let numd6s = $('input[name="d6"]').val();
-	let numd8s = $('input[name="d8"]').val();
-	let numd10s = $('input[name="d10"]').val();
-	let numd12s = $('input[name="d12"]').val();
-	let numd20s = $('input[name="d20"]').val();
-	let numd100s = $('input[name="d100"]').val();
+	let numd4s = $('.info input[name="d4"]').val();
+	let numd6s = $('.info input[name="d6"]').val();
+	let numd8s = $('.info input[name="d8"]').val();
+	let numd10s = $('.info input[name="d10"]').val();
+	let numd12s = $('.info input[name="d12"]').val();
+	let numd20s = $('.info input[name="d20"]').val();
+	let numd100s = $('.info input[name="d100"]').val();
 
 	// store the number of each dice in an array to loop thru
 	let types = [numd4s, numd6s, numd8s, numd10s, numd12s, numd20s, numd100s];
@@ -131,8 +131,8 @@ $("#dice-form").on("submit", (event) => {
 							<li>
 								<div class="d100-collection">
 									<img class="d100" src="../media/dice/dice-10.png" alt="D10">
-									<h2 class="number-d100-1">${randomNumber(d10)}</h2>
 									<img class="d100" src="../media/dice/dice-10.png" alt="D10">
+									<h2 class="number-d100-1">${randomNumber(d10)}</h2>
 									<h2 class="number-d100-2">${randomNumber(d10)}</h2>
 								</div>
 							</li>`;
@@ -149,4 +149,17 @@ $("#dice-form").on("submit", (event) => {
 		let result = document.getElementById("dice-section");
 		result.scrollIntoView();
 	}
+});
+
+
+
+// reset the number of each dice to zero when reset button pressed
+$('#reset-btn').on("click", function(event) {
+	$('.info input[name="d4"]').val(0);
+	$('.info input[name="d6"]').val(0);
+	$('.info input[name="d8"]').val(0);
+	$('.info input[name="d10"]').val(0);
+	$('.info input[name="d12"]').val(0);
+	$('.info input[name="d20"]').val(0);
+	$('.info input[name="d100"]').val(0);
 });
