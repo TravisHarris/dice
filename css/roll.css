@@ -110,6 +110,16 @@ body {
 	margin: 5px 0;
 }
 
+.list-d4,
+.list-d6,
+.list-d8,
+.list-d10,
+.list-d12,
+.list-d20 {
+	max-width: 60px;
+	max-height: 60px;
+}
+
 .d4,
 .d6 {
 	max-width: 60px;
@@ -164,27 +174,34 @@ body {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
 }
 
+.number-d4 {
+	transform: translate(-50%, -40%);
+}
+
+.number-d6 {
+	transform: translate(-50%, -50%);
+}
 
 .number-d8,
 .number-d10,
 .number-d12 {
-	transform: translate(-50%, -60%);
+	transform: translate(-50%, -53%);
 }
 
 
 .number-d20 {
 	font-size: 1rem;
+	transform: translate(-52%, -35%);
 }
 
 .number-d100-1 {
-	transform: translate(-330%, -60%);
+	transform: translate(-324%, -58%);
 }
 
 .number-d100-2 {
-	transform: translate(230%, -60%);
+	transform: translate(224%, -58%);
 }
 
 .plus,
